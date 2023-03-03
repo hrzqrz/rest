@@ -61,7 +61,7 @@ class User(AbstractBaseUser):
     modified_date = models.DateTimeField(auto_now_add=True)
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=True)
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
     is_superadmin = models.BooleanField(default=True)
         
     # authentication part of user by default django uses username as login field we overwrite that
@@ -84,9 +84,6 @@ class User(AbstractBaseUser):
             user_role = 'Vendor'
         elif self.role == 2:
             user_role = 'Customer'
-        else:
-            # if the user is not customer or vendor but is superadmin
-            user_role = 'Superadmin'
         return user_role
     
 class UserProfile(models.Model):
