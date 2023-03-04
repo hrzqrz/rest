@@ -1,0 +1,11 @@
+{% autoescape off %}
+    Hi, {{user.first_name}}
+
+    {% if is_approved %}
+    Congretulations! your restaurant is apploved by our admin team. --resthub
+    {% else %}
+    We are sorry you are not eligible for publishing your food on our marketplace.  for more detail please contact 
+    support@resthub.com.  --resthub
+    {% endif %} 
+    
+{% endautoescape %}
