@@ -36,7 +36,11 @@
 																		<li class="gal-img">
 																			<div class="drag-list">
 																				<div class="item-thumb">
+																					{% if profile.profile_picture %}
 																					<img class="thumbnail" src="{{profile.profile_picture.url}}" alt="">
+																					{% else %}
+																					<img class="img-fluid" src="{% static 'images/default-profile.PNG' %}" alt="">
+																					{%endif%}
 																				</div>
 																			</div>
 																		</li>
@@ -58,7 +62,11 @@
 																		<li class="gal-img">
 																			<div class="drag-list">
 																				<div class="item-thumb">
+																					{%if profile.cover_photo %}
 																					<img class="thumbnail" src="{{profile.cover_photo.url}}" alt="">
+																					{%else%}
+																					<img class="img-fluid" src="{% static 'images/default-cover.PNG' %}" alt="">
+																					{%endif%}
 																				</div>
 																			</div>
 																		</li>
@@ -107,7 +115,7 @@
 															<div class="field-holder">
 																<label>Address *</label>
 																{{profile_form.address}}
-                                                                <small class="text-muted float-right">Powered By Google</small>
+                                                                <small class="text-muted">Powered By Google</small>
 															</div>
 														</div>
 

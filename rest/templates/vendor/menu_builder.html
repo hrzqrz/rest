@@ -22,10 +22,15 @@
                         <div class="user-holder">
                             
                             <h2>Build your food menu</h2>
+                            {% comment %} <button class="btn btn-secondary" onclick="history.back">
+                                <i class="fa fa-angle-left text-danger"></i>
+                                Back
+                            </button> {% endcomment %}
                             <hr/>
                             <h6> menu categories</h6>
+                                {% if categories %}
 									<!-- menu table -->
-                                    <a href="#" class="btn btn-success float-right m-1">
+                                    <a href="{% url 'add_food' %}" class="btn btn-success float-right m-1">
                                         <i class="fa fa-plus" aria-hidden="true"></i>
                                         Add Food
                                     </a>
@@ -59,6 +64,16 @@
                                           {% endfor %} 
                                         </tbody>
                                       </table>
+                                      {% else %}
+                                      <h5 class="text-center">
+                                        No categories found </br></br>
+                                        <a href="{% url 'add_category' %}" class="btn btn-info">
+                                            <i class="fa fa-plus"></i>
+                                            Add Category 
+                                        </a>
+                                    </h5>
+                                      
+                                      {%endif%}
 									<!-- menu table -->
 
                         </div>
