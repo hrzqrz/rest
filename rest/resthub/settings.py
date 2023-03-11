@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'accounts.context_processors.get_vendor',
                 'marketplace.context_processor.get_cart_counter',
+                'marketplace.context_processor.get_cart_amount',
             ],
         },
     },
