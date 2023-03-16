@@ -23,4 +23,5 @@ urlpatterns = [
     
     # path for customer
     path('customer/', include('customers.urls')),
+    path('customer/', include('customers.urls')),
 ]
